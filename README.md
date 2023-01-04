@@ -16,6 +16,13 @@ npm install
 npm run dev
 ```
 
+## Compile SCSS
+
+```
+npm run sass:compile
+```
+
+
 ## Build TS file
 
 ```
