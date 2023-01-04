@@ -1,0 +1,25 @@
+@mixin font-size-line-height($fontSize, $lineHeight, $fontWeight) {
+	font-size: $fontSize;
+	line-height: $lineHeight;
+	font-weight: $fontWeight;
+}
+@mixin width-height($width, $height) {
+	width: $width;
+	height: $height;
+}
+@mixin before-after($top, $right, $bottom, $left) {
+	position: absolute;
+	content:"";
+	top:$top;
+	right:$right;
+	bottom:$bottom;
+	left:$left;
+}
+@mixin transition($seconds){
+	transition: all ease-in-out $seconds;
+}
+@mixin circle($widthHeight){
+	width:$widthHeight;
+	height: $widthHeight;
+	border-radius: 50%;
+}

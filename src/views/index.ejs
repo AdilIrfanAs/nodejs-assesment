@@ -1,0 +1,910 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>ExpressJS TypeScript starter template</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+	<link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+	<%- include('partials/header') %>
+
+		<div class="stats-bar">
+		<ul class="stats-lis list-unstyled mb-0 d-flex">
+			<li class="d-flex align-items-center">
+				<span class="stat-name me-3">Volume</span>
+				<div class="d-flex align-items-center">
+					<span class="stat-value me-2">
+						<i class="fa-solid fa-align-center me-1"></i><%= data.volume %>
+					</span>
+					<span class="stat-price">
+						<i class="fa-solid fa-arrow-up me-2 increase"></i>
+						<span>$<%= data.volumeInDollar %></span>
+					</span>
+				</div>
+			</li>
+			<li class="d-flex align-items-center">
+				<span class="stat-name me-3">Profit</span>
+				<div class="d-flex align-items-center">
+					<span class="stat-value me-2">
+						<i class="fa-solid fa-align-center me-1"></i><%= data.profit %>
+					</span>
+					<span class="stat-price">
+						<i class="fa-solid fa-arrow-down me-2 decrease"></i>
+						<span>$<%= data.profitInDollar %></span>
+					</span>
+				</div>
+			</li>
+			<li class="d-flex align-items-center">
+				<span class="stat-name me-3">Losses</span>
+				<div class="d-flex align-items-center">
+					<span class="stat-value me-2">
+						<i class="fa-solid fa-align-center me-1"></i><%= data.losses %>
+					</span>
+					<span class="stat-price">
+						<i class="fa-solid fa-arrow-up me-2 increase"></i>
+						<span>$<%= data.lossInDollar %>/span>
+					</span>
+				</div>
+			</li>
+			<li class="d-flex align-items-center">
+				<span class="stat-name me-3">Active Wallets</span>
+				<div class="d-flex align-items-center">
+					<span class="stat-value me-2">
+						<i class="fa-solid fa-align-center me-1"></i><%= data.activeWallets %>
+					</span>
+					<span class="stat-price">
+						<i class="fa-solid fa-arrow-up me-2 increase"></i>
+					</span>
+				</div>
+			</li>
+			<li class="d-flex align-items-center">
+				<span class="stat-name me-3">New Wallets</span>
+				<div class="d-flex align-items-center">
+					<span class="stat-value me-2">
+						<i class="fa-solid fa-align-center me-1"></i><%= data.newWallets %>
+					</span>
+					<span class="stat-price">
+						<i class="fa-solid fa-arrow-up me-2 increase"></i>
+					</span>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="feed-stat-block">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					<div class="feed-block">
+						<h2>24-Hours Feed</h2>
+						<ul class="feeds-list list-unstyled mb-0">
+							<li class="d-flex">
+								<div class="feed-info">
+									<div class="d-flex flex-column">
+										<div class="d-flex justify-content-between mb-3">
+											<div class="d-flex flex-column">
+												<strong class="feed-name">hodlponkz</strong>
+												<span class="feed-time">5 minutes ago</span>
+											</div>
+											<div class="buttons-holder d-flex">
+												<span class="d-flex justify-content-center align-items-center btn-plus">
+													<i class="fa-solid fa-plus"></i>
+												</span>
+												<span class="d-flex justify-content-center align-items-center btn-dropdown">
+													<i class="fa-solid fa-chevron-up"></i>
+												</span>
+											</div>
+										</div>
+										<ul class="user-images list-unstyled d-flex mb-0">
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="feed-meta">
+									<div class="price-stat d-flex justify-content-between align-items-center">
+										<span class="price-bought">
+											bought for <i class="fa-solid fa-align-center"></i>245.2 ($442,102)
+										</span>
+										<span class="price-diff">
+											310% below NFTi
+										</span>
+									</div>
+									<ul class="price-meta-info list-unstyled mb-0 d-flex align-items-center">
+										<li class="w-25 d-flex flex-column">
+											<span class="label text-uppercase d-block">NFTi</span>
+											<span class="value"><i class="fa-solid fa-align-center"></i>760.12</span>
+										</li>
+										<li class="w-25 d-flex flex-column">
+											<span class="label text-uppercase d-block">adj. floor</span>
+											<span class="value"><i class="fa-solid fa-align-center"></i>720.42</span>
+										</li>
+										<li class="w-50 d-flex flex-column align-items-end">
+											<span class="label text-uppercase d-block">Est. profit</span>
+											<span class="value increase"><i class="fa-solid fa-align-center"></i>514.92</span>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="d-flex">
+								<div class="feed-info">
+									<div class="d-flex flex-column">
+										<div class="d-flex justify-content-between mb-3">
+											<div class="d-flex flex-column">
+												<strong class="feed-name">hodlponkz</strong>
+												<span class="feed-time">5 minutes ago</span>
+											</div>
+											<div class="buttons-holder d-flex">
+												<span class="d-flex justify-content-center align-items-center btn-plus">
+													<i class="fa-solid fa-plus"></i>
+												</span>
+												<span class="d-flex justify-content-center align-items-center btn-dropdown">
+													<i class="fa-solid fa-chevron-up"></i>
+												</span>
+											</div>
+										</div>
+										<ul class="user-images list-unstyled d-flex mb-0">
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="feed-meta">
+									<div class="price-stat d-flex justify-content-between align-items-center">
+										<span class="price-bought">
+											bought for <i class="fa-solid fa-align-center"></i>245.2 ($442,102)
+										</span>
+										<span class="price-diff">
+											310% below NFTi
+										</span>
+									</div>
+									<ul class="price-meta-info list-unstyled mb-0 d-flex align-items-center">
+										<li class="w-25 d-flex flex-column">
+											<span class="label text-uppercase d-block">NFTi</span>
+											<span class="value"><i class="fa-solid fa-align-center"></i>760.12</span>
+										</li>
+										<li class="w-25 d-flex flex-column">
+											<span class="label text-uppercase d-block">adj. floor</span>
+											<span class="value"><i class="fa-solid fa-align-center"></i>720.42</span>
+										</li>
+										<li class="w-50 d-flex flex-column align-items-end">
+											<span class="label text-uppercase d-block">Est. profit</span>
+											<span class="value decrease"><i class="fa-solid fa-align-center"></i>122.5</span>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="d-flex">
+								<div class="feed-info">
+									<div class="d-flex flex-column">
+										<div class="d-flex justify-content-between mb-3">
+											<div class="d-flex flex-column">
+												<strong class="feed-name">hodlponkz</strong>
+												<span class="feed-time">5 minutes ago</span>
+											</div>
+											<div class="buttons-holder d-flex">
+												<span class="d-flex justify-content-center align-items-center btn-plus">
+													<i class="fa-solid fa-plus"></i>
+												</span>
+												<span class="d-flex justify-content-center align-items-center btn-dropdown">
+													<i class="fa-solid fa-chevron-up"></i>
+												</span>
+											</div>
+										</div>
+										<ul class="user-images list-unstyled d-flex mb-0">
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="feed-meta">
+									<div class="price-stat d-flex justify-content-between align-items-center">
+										<span class="price-bought">
+											bought for <i class="fa-solid fa-align-center"></i>245.2 ($442,102)
+										</span>
+										<span class="price-diff">
+											310% below NFTi
+										</span>
+									</div>
+									<ul class="price-meta-info list-unstyled mb-0 d-flex align-items-center">
+										<li class="w-25 d-flex flex-column">
+											<span class="label text-uppercase d-block">NFTi</span>
+											<span class="value"><i class="fa-solid fa-align-center"></i>760.12</span>
+										</li>
+										<li class="w-25 d-flex flex-column">
+											<span class="label text-uppercase d-block">adj. floor</span>
+											<span class="value"><i class="fa-solid fa-align-center"></i>720.42</span>
+										</li>
+										<li class="w-50 d-flex flex-column align-items-end">
+											<span class="label text-uppercase d-block">Est. profit</span>
+											<span class="value increase"><i class="fa-solid fa-align-center"></i>248.2</span>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="d-flex">
+								<div class="feed-info">
+									<div class="d-flex flex-column">
+										<div class="d-flex justify-content-between mb-3">
+											<div class="d-flex flex-column">
+												<strong class="feed-name">hodlponkz</strong>
+												<span class="feed-time">5 minutes ago</span>
+											</div>
+											<div class="buttons-holder d-flex">
+												<span class="d-flex justify-content-center align-items-center btn-plus">
+													<i class="fa-solid fa-plus"></i>
+												</span>
+												<span class="d-flex justify-content-center align-items-center btn-dropdown">
+													<i class="fa-solid fa-chevron-up"></i>
+												</span>
+											</div>
+										</div>
+										<ul class="user-images list-unstyled d-flex mb-0">
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="feed-meta">
+									<div class="price-stat d-flex justify-content-between align-items-center">
+										<span class="price-bought">
+											bought for <i class="fa-solid fa-align-center"></i>245.2 ($442,102)
+										</span>
+										<span class="price-diff">
+											310% below NFTi
+										</span>
+									</div>
+									<ul class="price-meta-info list-unstyled mb-0 d-flex align-items-center">
+										<li class="w-25 d-flex flex-column">
+											<span class="label text-uppercase d-block">NFTi</span>
+											<span class="value"><i class="fa-solid fa-align-center"></i>760.12</span>
+										</li>
+										<li class="w-25 d-flex flex-column">
+											<span class="label text-uppercase d-block">adj. floor</span>
+											<span class="value"><i class="fa-solid fa-align-center"></i>720.42</span>
+										</li>
+										<li class="w-50 d-flex flex-column align-items-end">
+											<span class="label text-uppercase d-block">Est. profit</span>
+											<span class="value increase"><i class="fa-solid fa-align-center"></i>382.4</span>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="d-flex">
+								<div class="feed-info">
+									<div class="d-flex flex-column">
+										<div class="d-flex justify-content-between mb-3">
+											<div class="d-flex flex-column">
+												<strong class="feed-name">hodlponkz</strong>
+												<span class="feed-time">5 minutes ago</span>
+											</div>
+											<div class="buttons-holder d-flex">
+												<span class="d-flex justify-content-center align-items-center btn-plus">
+													<i class="fa-solid fa-plus"></i>
+												</span>
+												<span class="d-flex justify-content-center align-items-center btn-dropdown">
+													<i class="fa-solid fa-chevron-up"></i>
+												</span>
+											</div>
+										</div>
+										<ul class="user-images list-unstyled d-flex mb-0">
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="feed-meta">
+									<div class="price-stat d-flex justify-content-between align-items-center">
+										<span class="price-bought">
+											bought for <i class="fa-solid fa-align-center"></i>245.2 ($442,102)
+										</span>
+										<span class="price-diff">
+											310% below NFTi
+										</span>
+									</div>
+									<ul class="price-meta-info list-unstyled mb-0 d-flex align-items-center">
+										<li class="w-25 d-flex flex-column">
+											<span class="label text-uppercase d-block">NFTi</span>
+											<span class="value"><i class="fa-solid fa-align-center"></i>760.12</span>
+										</li>
+										<li class="w-25 d-flex flex-column">
+											<span class="label text-uppercase d-block">adj. floor</span>
+											<span class="value"><i class="fa-solid fa-align-center"></i>720.42</span>
+										</li>
+										<li class="w-50 d-flex flex-column align-items-end">
+											<span class="label text-uppercase d-block">Est. profit</span>
+											<span class="value increase"><i class="fa-solid fa-align-center"></i>514.92</span>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="d-flex">
+								<div class="feed-info">
+									<div class="d-flex flex-column">
+										<div class="d-flex justify-content-between mb-3">
+											<div class="d-flex flex-column">
+												<strong class="feed-name">hodlponkz</strong>
+												<span class="feed-time">5 minutes ago</span>
+											</div>
+											<div class="buttons-holder d-flex">
+												<span class="d-flex justify-content-center align-items-center btn-plus">
+													<i class="fa-solid fa-plus"></i>
+												</span>
+												<span class="d-flex justify-content-center align-items-center btn-dropdown">
+													<i class="fa-solid fa-chevron-up"></i>
+												</span>
+											</div>
+										</div>
+										<ul class="user-images list-unstyled d-flex mb-0">
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="feed-meta">
+									<div class="price-stat d-flex justify-content-between align-items-center">
+										<span class="price-bought">
+											bought for <i class="fa-solid fa-align-center"></i>245.2 ($442,102)
+										</span>
+										<span class="price-diff">
+											310% below NFTi
+										</span>
+									</div>
+									<ul class="price-meta-info list-unstyled mb-0 d-flex align-items-center">
+										<li class="w-25 d-flex flex-column">
+											<span class="label text-uppercase d-block">NFTi</span>
+											<span class="value"><i class="fa-solid fa-align-center"></i>760.12</span>
+										</li>
+										<li class="w-25 d-flex flex-column">
+											<span class="label text-uppercase d-block">adj. floor</span>
+											<span class="value"><i class="fa-solid fa-align-center"></i>720.42</span>
+										</li>
+										<li class="w-50 d-flex flex-column align-items-end">
+											<span class="label text-uppercase d-block">Est. profit</span>
+											<span class="value decrease"><i class="fa-solid fa-align-center"></i>122.5</span>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="d-flex">
+								<div class="feed-info">
+									<div class="d-flex flex-column">
+										<div class="d-flex justify-content-between mb-3">
+											<div class="d-flex flex-column">
+												<strong class="feed-name">hodlponkz</strong>
+												<span class="feed-time">5 minutes ago</span>
+											</div>
+											<div class="buttons-holder d-flex">
+												<span class="d-flex justify-content-center align-items-center btn-plus">
+													<i class="fa-solid fa-plus"></i>
+												</span>
+												<span class="d-flex justify-content-center align-items-center btn-dropdown">
+													<i class="fa-solid fa-chevron-up"></i>
+												</span>
+											</div>
+										</div>
+										<ul class="user-images list-unstyled d-flex mb-0">
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="feed-meta">
+									<div class="price-stat d-flex justify-content-between align-items-center">
+										<span class="price-bought">
+											bought for <i class="fa-solid fa-align-center"></i>245.2 ($442,102)
+										</span>
+										<span class="price-diff">
+											310% below NFTi
+										</span>
+									</div>
+									<ul class="price-meta-info list-unstyled mb-0 d-flex align-items-center">
+										<li class="w-25 d-flex flex-column">
+											<span class="label text-uppercase d-block">NFTi</span>
+											<span class="value"><i class="fa-solid fa-align-center"></i>760.12</span>
+										</li>
+										<li class="w-25 d-flex flex-column">
+											<span class="label text-uppercase d-block">adj. floor</span>
+											<span class="value"><i class="fa-solid fa-align-center"></i>720.42</span>
+										</li>
+										<li class="w-50 d-flex flex-column align-items-end">
+											<span class="label text-uppercase d-block">Est. profit</span>
+											<span class="value increase"><i class="fa-solid fa-align-center"></i>248.2</span>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="d-flex">
+								<div class="feed-info">
+									<div class="d-flex flex-column">
+										<div class="d-flex justify-content-between mb-3">
+											<div class="d-flex flex-column">
+												<strong class="feed-name">hodlponkz</strong>
+												<span class="feed-time">5 minutes ago</span>
+											</div>
+											<div class="buttons-holder d-flex">
+												<span class="d-flex justify-content-center align-items-center btn-plus">
+													<i class="fa-solid fa-plus"></i>
+												</span>
+												<span class="d-flex justify-content-center align-items-center btn-dropdown">
+													<i class="fa-solid fa-chevron-up"></i>
+												</span>
+											</div>
+										</div>
+										<ul class="user-images list-unstyled d-flex mb-0">
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+											<li>
+												<img class="img-fluid" src="../images/user.png" alt="" />
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="feed-meta">
+									<div class="price-stat d-flex justify-content-between align-items-center">
+										<span class="price-bought">
+											bought for <i class="fa-solid fa-align-center"></i>245.2 ($442,102)
+										</span>
+										<span class="price-diff">
+											310% below NFTi
+										</span>
+									</div>
+									<ul class="price-meta-info list-unstyled mb-0 d-flex align-items-center">
+										<li class="w-25 d-flex flex-column">
+											<span class="label text-uppercase d-block">NFTi</span>
+											<span class="value"><i class="fa-solid fa-align-center"></i>760.12</span>
+										</li>
+										<li class="w-25 d-flex flex-column">
+											<span class="label text-uppercase d-block">adj. floor</span>
+											<span class="value"><i class="fa-solid fa-align-center"></i>720.42</span>
+										</li>
+										<li class="w-50 d-flex flex-column align-items-end">
+											<span class="label text-uppercase d-block">Est. profit</span>
+											<span class="value increase"><i class="fa-solid fa-align-center"></i>382.4</span>
+										</li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="stat-block">
+						<nav class="tab-header">
+							<div class="nav nav-tabs" id="nav-tab" role="tablist">
+								<button class="nav-link d-flex justify-content-center align-items-center tabs-selector" id="nav-all-tab" data-bs-toggle="tab" data-bs-target="#nav-all" type="button" role="tab" aria-controls="nav-all" aria-selected="true">All</button>
+								<button class="nav-link d-flex justify-content-center align-items-center active  tabs-selector" id="nav-whale-tab" data-bs-toggle="tab" data-bs-target="#nav-whale" type="button" role="tab" aria-controls="nav-whale" aria-selected="false">Whale</button>
+								<button class="nav-link d-flex justify-content-center align-items-center tabs-selector" id="nav-new-tab" data-bs-toggle="tab" data-bs-target="#nav-new" type="button" role="tab" aria-controls="nav-new" aria-selected="false">New</button>
+								<button class="nav-link d-flex justify-content-center align-items-center dropdown"><i class="fa-solid fa-ellipsis"></i></button>
+							</div>
+						</nav>
+						<div class="tab-content" id="nav-tabContent">
+							<div class="tab-pane fade" id="nav-all" role="tabpanel" aria-labelledby="nav-all-tab" tabindex="0">
+								<strong class="stat-heading d-block" ><%= filteredData.total %> All</strong>
+								<ul class="stats-list list-unstyled mb-0">
+									<li class="d-flex flex-column">
+										<div class="d-flex justify-content-between mb-3">
+											<span class="label">Est. Profit</span>
+											<span class="value"><i class="fa-solid fa-align-center me-1"></i><%= filteredData.profit %>K</span>
+										</div>
+										<div class="progress-holder">
+											<div class="progress" style="width:50%"></div>
+										</div>
+									</li>
+									<li class="d-flex flex-column">
+										<div class="d-flex justify-content-between mb-3">
+											<span class="label">Est. Loss</span>
+											<span class="value"><i class="fa-solid fa-align-center me-1"></i><%= filteredData.loss %>K</span>
+										</div>
+										<div class="progress-holder">
+											<div class="progress" style="width:40%"></div>
+										</div>
+									</li>
+									<li class="d-flex flex-column">
+										<div class="d-flex justify-content-between mb-3">
+											<span class="label">Gas Fees</span>
+											<span class="value"><i class="fa-solid fa-align-center me-1"></i><%= filteredData.gasFee %>K</span>
+										</div>
+										<div class="progress-holder">
+											<div class="progress" style="width:10%"></div>
+										</div>
+									</li>
+									<li class="d-flex flex-column">
+										<div class="d-flex justify-content-between mb-3">
+											<span class="label">Bought</span>
+											<span class="value"><i class="fa-solid fa-align-center me-1"></i><%= filteredData.bought %>K</span>
+										</div>
+										<div class="progress-holder">
+											<div class="progress" style="width:55%"></div>
+										</div>
+									</li>
+									<li class="d-flex flex-column">
+										<div class="d-flex justify-content-between mb-3">
+											<span class="label">Sold</span>
+											<span class="value"><i class="fa-solid fa-align-center me-1"></i><%= filteredData.sold %>K</span>
+										</div>
+										<div class="progress-holder">
+											<div class="progress" style="width:30%"></div>
+										</div>
+									</li>
+									<li class="d-flex flex-column">
+										<div class="d-flex justify-content-between mb-3">
+											<span class="label">Transferred</span>
+											<span class="value"><i class="fa-solid fa-align-center me-1"></i><%= filteredData.transferred %>K</span>
+										</div>
+										<div class="progress-holder">
+											<div class="progress" style="width:15%"></div>
+										</div>
+									</li>
+									<li class="d-flex flex-column">
+										<div class="d-flex justify-content-between mb-3">
+											<span class="label">Listed</span>
+											<span class="value"><i class="fa-solid fa-align-center me-1"></i><%= filteredData.listed %>K</span>
+										</div>
+										<div class="progress-holder">
+											<div class="progress" style="width:30%"></div>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="tab-pane fade show active" id="nav-whale" role="tabpanel" aria-labelledby="nav-whale-tab" tabindex="0">
+								<strong class="stat-heading d-block"><%= filteredData.total %> whales</strong>
+								<ul class="stats-list list-unstyled mb-0">
+									<li class="d-flex flex-column">
+										<div class="d-flex justify-content-between mb-3">
+											<span class="label">Est. Profit</span>
+											<span class="value"><i class="fa-solid fa-align-center me-1"></i><%= filteredData.profit %>K</span>
+										</div>
+										<div class="progress-holder">
+											<div class="progress" style="width:50%"></div>
+										</div>
+									</li>
+									<li class="d-flex flex-column">
+										<div class="d-flex justify-content-between mb-3">
+											<span class="label">Est. Loss</span>
+											<span class="value"><i class="fa-solid fa-align-center me-1"></i><%= filteredData.loss %>K</span>
+										</div>
+										<div class="progress-holder">
+											<div class="progress" style="width:40%"></div>
+										</div>
+									</li>
+									<li class="d-flex flex-column">
+										<div class="d-flex justify-content-between mb-3">
+											<span class="label">Gas Fees</span>
+											<span class="value"><i class="fa-solid fa-align-center me-1"></i><%= filteredData.gasFee %>K</span>
+										</div>
+										<div class="progress-holder">
+											<div class="progress" style="width:10%"></div>
+										</div>
+									</li>
+									<li class="d-flex flex-column">
+										<div class="d-flex justify-content-between mb-3">
+											<span class="label">Bought</span>
+											<span class="value"><i class="fa-solid fa-align-center me-1"></i><%= filteredData.bought %>K</span>
+										</div>
+										<div class="progress-holder">
+											<div class="progress" style="width:55%"></div>
+										</div>
+									</li>
+									<li class="d-flex flex-column">
+										<div class="d-flex justify-content-between mb-3">
+											<span class="label">Sold</span>
+											<span class="value"><i class="fa-solid fa-align-center me-1"></i><%= filteredData.sold %>K</span>
+										</div>
+										<div class="progress-holder">
+											<div class="progress" style="width:30%"></div>
+										</div>
+									</li>
+									<li class="d-flex flex-column">
+										<div class="d-flex justify-content-between mb-3">
+											<span class="label">Transferred</span>
+											<span class="value"><i class="fa-solid fa-align-center me-1"></i><%= filteredData.transferred %>K</span>
+										</div>
+										<div class="progress-holder">
+											<div class="progress" style="width:15%"></div>
+										</div>
+									</li>
+									<li class="d-flex flex-column">
+										<div class="d-flex justify-content-between mb-3">
+											<span class="label">Listed</span>
+											<span class="value"><i class="fa-solid fa-align-center me-1"></i><%= filteredData.listed %>K</span>
+										</div>
+										<div class="progress-holder">
+											<div class="progress" style="width:30%"></div>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="tab-pane fade" id="nav-new" role="tabpanel" aria-labelledby="nav-new-tab" tabindex="0">
+								<strong class="stat-heading d-block"><%= filteredData.total %> New</strong>
+								<ul class="stats-list list-unstyled mb-0">
+									<li class="d-flex flex-column">
+										<div class="d-flex justify-content-between mb-3">
+											<span class="label">Est. Profit</span>
+											<span class="value"><i class="fa-solid fa-align-center me-1"></i><%= filteredData.profit %>K</span>
+										</div>
+										<div class="progress-holder">
+											<div class="progress" style="width:50%"></div>
+										</div>
+									</li>
+									<li class="d-flex flex-column">
+										<div class="d-flex justify-content-between mb-3">
+											<span class="label">Est. Loss</span>
+											<span class="value"><i class="fa-solid fa-align-center me-1"></i><%= filteredData.loss %>K</span>
+										</div>
+										<div class="progress-holder">
+											<div class="progress" style="width:40%"></div>
+										</div>
+									</li>
+									<li class="d-flex flex-column">
+										<div class="d-flex justify-content-between mb-3">
+											<span class="label">Gas Fees</span>
+											<span class="value"><i class="fa-solid fa-align-center me-1"></i><%= filteredData.gasFee %>K</span>
+										</div>
+										<div class="progress-holder">
+											<div class="progress" style="width:10%"></div>
+										</div>
+									</li>
+									<li class="d-flex flex-column">
+										<div class="d-flex justify-content-between mb-3">
+											<span class="label">Bought</span>
+											<span class="value"><i class="fa-solid fa-align-center me-1"></i><%= filteredData.bought %>K</span>
+										</div>
+										<div class="progress-holder">
+											<div class="progress" style="width:55%"></div>
+										</div>
+									</li>
+									<li class="d-flex flex-column">
+										<div class="d-flex justify-content-between mb-3">
+											<span class="label">Sold</span>
+											<span class="value"><i class="fa-solid fa-align-center me-1"></i><%= filteredData.sold %>K</span>
+										</div>
+										<div class="progress-holder">
+											<div class="progress" style="width:30%"></div>
+										</div>
+									</li>
+									<li class="d-flex flex-column">
+										<div class="d-flex justify-content-between mb-3">
+											<span class="label">Transferred</span>
+											<span class="value"><i class="fa-solid fa-align-center me-1"></i><%= filteredData.transferred %>K</span>
+										</div>
+										<div class="progress-holder">
+											<div class="progress" style="width:15%"></div>
+										</div>
+									</li>
+									<li class="d-flex flex-column">
+										<div class="d-flex justify-content-between mb-3">
+											<span class="label">Listed</span>
+											<span class="value"><i class="fa-solid fa-align-center me-1"></i><%= filteredData.listed %>K</span>
+										</div>
+										<div class="progress-holder">
+											<div class="progress" style="width:30%"></div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- <%- include('partials/footer') %> -->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+
+	<script>
+
+		 
+		$(document).on("click", ".tabs-selector", function(e) {
+			let tabId = $(e.target).attr('data-bs-target').split("#")[1];
+			console.log(tabId)
+			fetch(`http://localhost:8082/data?tabName=${tabId}`)
+                .then((res) => res.json())
+				.then((res) => {
+					const textNode = document.querySelector('#nav-tabContent');
+                    var html = '';
+                        html += `
+						<strong class="stat-heading d-block">${res.total} whales</strong>
+							<ul class="stats-list list-unstyled mb-0">
+									<li class="d-flex flex-column">
+										<div class="d-flex justify-content-between mb-3">
+											<span class="label">Est. Profit</span>
+											<span class="value"><i class="fa-solid fa-align-center me-1"></i>${res.profit}K</span>
+										</div>
+										<div class="progress-holder">
+											<div class="progress" style="width:50%"></div>
+										</div>
+									</li>
+									<li class="d-flex flex-column">
+										<div class="d-flex justify-content-between mb-3">
+											<span class="label">Est. Loss</span>
+											<span class="value"><i class="fa-solid fa-align-center me-1"></i>${res.loss}K</span>
+										</div>
+										<div class="progress-holder">
+											<div class="progress" style="width:40%"></div>
+										</div>
+									</li>
+									<li class="d-flex flex-column">
+										<div class="d-flex justify-content-between mb-3">
+											<span class="label">Gas Fees</span>
+											<span class="value"><i class="fa-solid fa-align-center me-1"></i>${res.gasFees}K</span>
+										</div>
+										<div class="progress-holder">
+											<div class="progress" style="width:10%"></div>
+										</div>
+									</li>
+									<li class="d-flex flex-column">
+										<div class="d-flex justify-content-between mb-3">
+											<span class="label">Bought</span>
+											<span class="value"><i class="fa-solid fa-align-center me-1"></i>${res.bought}K</span>
+										</div>
+										<div class="progress-holder">
+											<div class="progress" style="width:55%"></div>
+										</div>
+									</li>
+									<li class="d-flex flex-column">
+										<div class="d-flex justify-content-between mb-3">
+											<span class="label">Sold</span>
+											<span class="value"><i class="fa-solid fa-align-center me-1"></i>${res.sold}K</span>
+										</div>
+										<div class="progress-holder">
+											<div class="progress" style="width:30%"></div>
+										</div>
+									</li>
+									<li class="d-flex flex-column">
+										<div class="d-flex justify-content-between mb-3">
+											<span class="label">Transferred</span>
+											<span class="value"><i class="fa-solid fa-align-center me-1"></i>${res.transferred}K</span>
+										</div>
+										<div class="progress-holder">
+											<div class="progress" style="width:15%"></div>
+										</div>
+									</li>
+									<li class="d-flex flex-column">
+										<div class="d-flex justify-content-between mb-3">
+											<span class="label">Listed</span>
+											<span class="value"><i class="fa-solid fa-align-center me-1"></i>${res.listed}K</span>
+										</div>
+										<div class="progress-holder">
+											<div class="progress" style="width:30%"></div>
+										</div>
+									</li>
+								</ul>`
+                    
+                    $(tabId).html(html);
+                });
+		})
+		// const allData = document.querySelector('#nav-all-tab');
+        // allData.addEventListener('click', () => {
+            
+        // });
+
+		// const whaleData = document.querySelector('#nav-whale-tab');
+        // whaleData.addEventListener('click', () => {
+        //     fetch('http://localhost:8082/?tabName=whale')
+        //         .then((res) => res.json())
+        // });
+
+		// const newData = document.querySelector('#nav-new-tab');
+        // newData.addEventListener('click', () => {
+        //     fetch('http://localhost:8082/?tabName=new')
+        //         .then((res) => res.json())
+        // });
+
+
+
+	</script>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+</body>
+
+</html>

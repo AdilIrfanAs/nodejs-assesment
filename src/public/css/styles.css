@@ -1,0 +1,217 @@
+body {
+  background: #1E1E1E;
+  font-family: "Inter", sans-serif; }
+  body::-webkit-scrollbar {
+    width: 1em; }
+  body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); }
+  body::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey; }
+
+.transition {
+  transition: all ease-in-out 0.3s; }
+
+h2 {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 25px; }
+
+#header {
+  padding: 0 25px; }
+  #header .navbar {
+    background-color: transparent !important; }
+    #header .navbar .navbar-brand {
+      font-size: 32px;
+      line-height: 38px;
+      font-weight: 700;
+      color: #fff; }
+    #header .navbar .nav-link {
+      color: #fff;
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 500;
+      padding: 35px 25px; }
+      #header .navbar .nav-link:after {
+        width: 0;
+        height: 5px;
+        position: absolute;
+        content: "";
+        top: auto;
+        right: auto;
+        bottom: 0;
+        left: 0;
+        background: #9452F7;
+        transition: all ease-in-out 0.3s; }
+      #header .navbar .nav-link:hover {
+        color: #fff; }
+        #header .navbar .nav-link:hover:after {
+          width: 100%;
+          height: 5px; }
+  #header .drop-down-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #17161C;
+    color: #79798C; }
+
+.stats-bar {
+  background: #17161C;
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: 400;
+  margin: 0 0 30px; }
+  .stats-bar li {
+    padding: 20px 25px;
+    width: 20%;
+    height: auto; }
+    .stats-bar li:nth-child(odd) {
+      background: #1A1A22; }
+  .stats-bar .stat-name,
+  .stats-bar .stat-value {
+    color: #F2F2F5; }
+  .stats-bar .increase {
+    color: #2BC23F; }
+  .stats-bar .decrease {
+    color: #BE3D2C; }
+  .stats-bar span {
+    color: #79798C; }
+
+.feed-stat-block .feed-block {
+  background: #17161C;
+  padding: 25px 20px; }
+
+.feed-stat-block .feeds-list {
+  max-height: 568px;
+  overflow-y: auto; }
+  .feed-stat-block .feeds-list::-webkit-scrollbar {
+    width: 3px; }
+  .feed-stat-block .feeds-list::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px #1E1E1E; }
+  .feed-stat-block .feeds-list::-webkit-scrollbar-thumb {
+    background-color: #F2F2F5;
+    outline: 1px solid #F2F2F5;
+    border-radius: 3px; }
+  .feed-stat-block .feeds-list li {
+    background: #1D1D26;
+    margin: 0 0 8px;
+    border-radius: 2px;
+    overflow: hidden; }
+  .feed-stat-block .feeds-list .feed-info {
+    width: 40%;
+    height: auto;
+    padding: 20px;
+    border-right: 1px solid #17161C; }
+  .feed-stat-block .feeds-list .feed-name {
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 7px; }
+  .feed-stat-block .feeds-list .feed-time {
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 500;
+    color: #79798C; }
+  .feed-stat-block .feeds-list .buttons-holder span {
+    width: 36px;
+    height: 40px; }
+  .feed-stat-block .feeds-list .buttons-holder .btn-plus {
+    background: #282836;
+    color: #9452F7; }
+  .feed-stat-block .feeds-list .buttons-holder .btn-dropdown {
+    background: #353547;
+    color: #fff; }
+  .feed-stat-block .feeds-list .feed-meta {
+    width: 60%;
+    height: auto;
+    padding: 0 20px 0 0; }
+  .feed-stat-block .feeds-list .user-images li {
+    width: 30px;
+    height: 30px;
+    border-radius: 2px;
+    overflow: hidden;
+    margin: 0 4px 4px 0; }
+  .feed-stat-block .feeds-list .price-stat {
+    padding: 20px;
+    border-bottom: 1px solid #17161C; }
+  .feed-stat-block .feeds-list .price-bought {
+    color: #fff;
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 700; }
+  .feed-stat-block .feeds-list .price-diff {
+    color: #79798C;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 500; }
+  .feed-stat-block .feeds-list .price-meta-info {
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 500;
+    color: #79798C; }
+    .feed-stat-block .feeds-list .price-meta-info li {
+      padding: 13px 20px; }
+    .feed-stat-block .feeds-list .price-meta-info .label {
+      margin: 0 0 10px; }
+    .feed-stat-block .feeds-list .price-meta-info .value {
+      font-weight: bold; }
+    .feed-stat-block .feeds-list .price-meta-info .increase {
+      color: #2BC23F; }
+    .feed-stat-block .feeds-list .price-meta-info .decrease {
+      color: #BE3D2C; }
+
+.stat-block {
+  background: #17161C; }
+  .stat-block .tab-header {
+    padding: 12px 20px;
+    background: #1D1D26; }
+    .stat-block .tab-header .nav-tabs {
+      border: none; }
+  .stat-block .nav-tabs button {
+    min-width: 40px;
+    height: 40px;
+    border-radius: 30px;
+    padding: 8px 20px;
+    margin: 0 8px 0 0;
+    background: #17161C;
+    color: #79798C;
+    cursor: pointer;
+    transition: all ease-in-out 0.3s; }
+    .stat-block .nav-tabs button.dropdown {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%; }
+    .stat-block .nav-tabs button.active, .stat-block .nav-tabs button:hover {
+      background: #F2F2F5;
+      color: #17161C; }
+  .stat-block .tab-pane {
+    padding: 30px 20px; }
+    .stat-block .tab-pane .stat-heading {
+      font-size: 15px;
+      line-height: 18px;
+      font-weight: 700;
+      color: #F2F2F5;
+      margin: 0 0 40px; }
+    .stat-block .tab-pane .stats-list li {
+      margin: 0 0 30px; }
+    .stat-block .tab-pane .label {
+      font-size: 15px;
+      line-height: 18px;
+      font-weight: 500;
+      color: #79798C; }
+    .stat-block .tab-pane .value {
+      font-size: 15px;
+      line-height: 18px;
+      font-weight: 700;
+      color: #F2F2F5; }
+    .stat-block .tab-pane .progress-holder {
+      width: 100%;
+      height: 4px;
+      background: #282836; }
+      .stat-block .tab-pane .progress-holder .progress {
+        width: 100%;
+        height: 4px;
+        background: #1FA8D1; }

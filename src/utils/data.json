@@ -1,0 +1,43 @@
+{
+    "stats": {
+        "volume": 60,
+        "volumeInDollar": 171,
+        "profit": 45,
+        "profitInDollar": 170,
+        "losses": 32,
+        "lossInDollar": 21,
+        "activeWallets": 12,
+        "newWallets": 3
+    },
+    "allData": {
+        "total": 1000 ,
+        "profit": 900,
+        "loss": 456,
+        "gasFee": 456,
+        "bought": 434,
+        "sold": 345,
+        "transferred": 222,
+        "listed": 123
+    },
+    "whaleData": {
+        "total": 2000,
+        "profit": 800,
+        "loss": 356,
+        "gasFee": 356,
+        "bought": 334,
+        "sold": 245,
+        "transferred": 122,
+        "listed": 23
+    },
+    "newData": {
+        "total": 3000,
+        "profit": 600,
+        "loss": 256,
+        "gasFee": 156,
+        "bought": 234,
+        "sold": 145,
+        "transferred": 122,
+        "listed": 20
+    }
+}
+  

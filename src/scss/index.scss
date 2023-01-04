@@ -1,0 +1,237 @@
+@import "_variables";
+@import "_mixins";
+
+body {
+	background: $bgColor;
+	font-family: $fontFamily;
+	&::-webkit-scrollbar {
+		width: 1em;
+	}
+	&::-webkit-scrollbar-track {
+		box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: darkgrey;
+		outline: 1px solid slategrey;
+	}
+}
+.transition{@include transition(0.3s)}
+h2{
+	@include font-size-line-height(20px, 24px, 700);
+	color:$colorWhite;
+	margin:0 0 25px;
+}
+#header{
+	padding:0 25px;
+	.navbar{
+		background-color: transparent !important;
+		.navbar-brand{
+			@include font-size-line-height(32px, 38px, 700);
+			color:$colorWhite;
+		}
+		.nav-link{
+			color:$colorWhite;
+			@include font-size-line-height(16px, 20px, 500);
+			padding:35px 25px;
+			&:after{
+				@include width-height(0,5px);
+				@include before-after(auto,auto,0,0);
+				background:$colorPurple;
+				@include transition(0.3s)
+			}
+			&:hover{
+				color:$colorWhite;
+				&:after{
+					@include width-height(100%,5px);
+				}
+			}
+		}
+	}
+	.drop-down-icon{
+		@include circle(42px);
+		background:$bgSecondary;
+		color:$colorSecondary;
+	}
+}
+.stats-bar{
+	background:$bgSecondary;
+	@include font-size-line-height(15px, 18px, 400);
+	margin:0 0 30px;
+	li{
+		padding:20px 25px;
+		@include width-height(20%,auto);
+		&:nth-child(odd){
+			background:$bgLightGrey;
+		}
+	}
+	.stat-name,
+	.stat-value{
+		color:$colorWhiteLight;
+	}
+	.increase{
+		color:$colorGreen;
+	}
+	.decrease{
+		color:$colorRed;
+	}
+	span{
+		color:$colorSecondary;
+	}
+}
+.feed-stat-block{
+	.feed-block{
+		background:$bgSecondary;
+		padding:25px 20px;
+	}
+	.feeds-list{
+		max-height: 568px;
+		overflow-y: auto;
+		&::-webkit-scrollbar {
+			width: 3px;
+		}
+		&::-webkit-scrollbar-track {
+			box-shadow: inset 0 0 6px $bgColor;
+		}
+		&::-webkit-scrollbar-thumb {
+			background-color: $colorWhiteLight;
+			outline: 1px solid $colorWhiteLight;
+			border-radius: 3px;
+		}
+		li{
+			background:$bgLightGrey2;
+			margin:0 0 8px;
+			border-radius:2px;
+			overflow: hidden;
+		}
+		.feed-info{
+			@include width-height(40%,auto);
+			padding:20px;
+			border-right:1px solid $bgSecondary;;
+		}
+		.feed-name{
+			@include font-size-line-height(15px, 18px, 700);
+			color:$colorWhite;
+			margin:0 0 7px;
+		}
+		.feed-time{
+			@include font-size-line-height(12px, 14px, 500);
+			color:$colorSecondary;
+		}
+		.buttons-holder{
+			span{
+				@include width-height(36px,40px);
+			}
+			.btn-plus{
+				background:#282836;
+				color:$colorPurple;
+			}
+			.btn-dropdown{
+				background: #353547;
+				color:$colorWhite;
+			}
+		}
+		.feed-meta{
+			@include width-height(60%,auto);
+			padding:0 20px 0 0;
+		}
+		.user-images{
+			li{
+				@include width-height(30px,30px);
+				border-radius:2px;
+				overflow: hidden;
+				margin:0 4px 4px 0;
+			}
+		}
+		.price-stat{
+			padding:20px;
+			border-bottom:1px solid $bgSecondary;;
+		}
+		.price-bought{
+			color:$colorWhite;
+			@include font-size-line-height(15px, 18px, 700);
+		}
+		.price-diff{
+			color:$colorSecondary;
+			@include font-size-line-height(12px, 14px, 500);
+		}
+		.price-meta-info{
+			@include font-size-line-height(12px, 14px, 500);
+			color:$colorSecondary;
+			li{
+				padding:13px 20px;
+			}
+			.label{
+				margin: 0 0 10px;
+			}
+			.value{
+				font-weight: bold;
+			}
+			.increase{
+				color:$colorGreen;
+			}
+			.decrease{
+				color:$colorRed;
+			}
+		}
+	}
+}
+.stat-block{
+	background:$bgSecondary;
+	.tab-header{
+		padding:12px 20px;
+		background:$bgLightGrey2;
+		.nav-tabs{
+			border:none;
+		}
+	}
+	.nav-tabs{
+		button{
+			min-width:40px;
+			height:40px;
+			border-radius:30px;
+			padding:8px 20px;
+			margin:0 8px 0 0;
+			background:$bgSecondary;
+			color:$colorSecondary;
+			cursor: pointer;
+			@include transition(0.3s);
+			&.dropdown{
+				@include circle(40px);
+			}
+			&.active,
+			&:hover{
+				background:$colorWhiteLight;
+				color:$bgSecondary;
+			}
+		}
+	}
+	.tab-pane{
+		padding:30px 20px;
+		.stat-heading{
+			@include font-size-line-height(15px, 18px, 700);
+			color:$colorWhiteLight;
+			margin:0 0 40px
+		}
+		.stats-list{
+			li{
+				margin:0 0 30px;
+			}
+		}
+		.label{
+			@include font-size-line-height(15px, 18px, 500);
+			color:$colorSecondary;
+		}
+		.value{
+			@include font-size-line-height(15px, 18px, 700);
+			color:$colorWhiteLight;
+		}
+		.progress-holder{
+			@include width-height(100%,4px);
+			background:$bgLightGrey3;
+			.progress{
+				@include width-height(100%,4px);
+				background:$coloBlue;
+			}
+		}
+	}
+}
