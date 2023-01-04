@@ -20,16 +20,12 @@ export const homepageData = async ( req: Request, res: Response, next: NextFunct
 
 
   if(tabName === "nav-all") {
-    console.log(tabName)
     filteredData = JsonData.allData
   }
   else if(tabName === "nav-whale") {
-    console.log(tabName)
     filteredData = JsonData.whaleData
-    console.log(filteredData, "filteredData whale")
   }
   else if(tabName === "nav-new") {
-    console.log(tabName)
     filteredData = JsonData.newData
   }
  
